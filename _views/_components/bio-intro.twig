@@ -1,0 +1,26 @@
+<div class="container grid grid-cols-12 lg:gap-8">
+    
+    <div
+        class="{{bgColor}} col-span-12 p-4 text-black lg:col-span-6 lg:flex lg:flex-col lg:justify-center lg:p-12 {{containerClasses}}">
+        
+        <img class="w-full mb-8 lazyload max-w-64 mix-blend-multiply" data-src="/logo.svg" alt="Jules Smith Logo" width="1175"
+            height="760" />
+
+        <div class={{contentClasses}}>
+           {{content}}
+        </div>
+
+        {% if slug %}
+            <a href={{slug}}
+                class="inline-flex items-center mt-8 font-sans text-lg font-bold transition-all duration-200 text-pink hover:pl-2">
+                {{linkText}}
+                {{ function('icon', 'angle-right', 'w-4 h-4') }}
+            </a>
+        {% endif %}
+    </div>
+
+    <div class="relative h-full col-span-12 mt-12 lg:col-span-6 lg:-ml-8 lg:mt-0">
+        <div class="absolute top-0 left-0 z-0 w-full h-full bg-white shadow-lg rotate-3"></div>
+        <img class="relative top-0 left-0 z-10 object-cover object-center w-full h-full shadow-lg lazyload lg:absolute" alt="Jules Smith Bio" data-src="{{image}}" />
+    </div>
+</div>

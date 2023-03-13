@@ -1,0 +1,45 @@
+{% include "_components/picture.twig" with {
+    source: image,
+    lazyload: false,
+    breakpoints: {
+        "1530px" : {
+        w: 1800,
+        h: 800,
+        crop: 'center'
+        },
+        "1280px" : {
+        w: 1530,
+        h: 500,
+        crop: 'center'
+        },
+        "1024px" : {
+        w: 1280,
+        h: 500,
+        crop: 'center'
+        },
+        "768px" : {
+        w: 1024,
+        h: 500,
+        crop: 'center'
+        },
+        "640px" : {
+        w: 768,
+        h: 400,
+        crop: 'center'
+        },
+        "1px" : {
+        w: 640,
+        h: 640,
+        crop: 'center'
+        },
+    },
+    img: {
+        classes: 'aspect-video lg:aspect-[16/6] xl:aspect-[16/6] w-full bg-gray-100 object-cover object-center',
+        w: 640,
+        h: 640,
+        crop: 'center',
+    }
+    }
+%}
+    
+

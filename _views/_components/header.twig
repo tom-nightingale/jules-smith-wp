@@ -1,0 +1,68 @@
+<header class="py-6 bg-white lg:py-4">
+	<div class="container">
+		<div class="flex flex-wrap items-center justify-between lg:hidden">
+			<a class="w-1/2 transition-all duration-500 max-w-32" href="/">
+				<img class="" src="{{theme.link}}/_resources/images/logo.svg" alt="Go home" width="1175" height="760" />
+			</a>
+		
+			<a href="/" class="flex items-center mobile-menu-button" id="mobile-menu-button">
+				<span class="hidden mr-4 font-sans font-bold uppercase xs:inline-block">Menu</span>
+				<button aria-label="Open Menu" class="btn-mobile-menu">
+					<span></span>
+					<span></span>
+					<span></span>
+				</button>
+			</a>
+		</div>
+	</div>
+
+	{# mobile menu #}
+	<nav id="mobile-menu" aria-label="Mobile Menu" class="fixed top-0 left-0 z-40 flex flex-col items-center justify-center w-full min-h-screen transition-all duration-500 bg-white lg:invisible lg:hidden lg:opacity-0">
+		<a class="block w-1/2 mb-8 transition-all duration-500 max-w-40" href="/">
+			<img class="lazyload" data-src="/logo.svg" alt="Go home" width="1175" height="760" />
+		</a>
+
+		{% if primaryMenu %}
+			{% for item in primaryMenu.items %}
+				{% include "_views/_components/nav-item.twig" with {
+					current: item.current,
+					label: item.name,
+					link: item.link,
+					isMobileViewport: true,
+				} only %}
+			{% endfor %}
+		{% endif %}
+	</nav>
+
+	{# desktop menu #}
+	<nav aria-label="Primary Menu" class="hidden w-full lg:flex lg:items-center lg:justify-between">
+		<div class="w-[35%] lg:flex lg:items-center lg:justify-between">
+			{% if primaryMenu %}
+				{% for item in primaryMenu.items|slice(0, 3) %}
+				{% include "_views/_components/nav-item.twig" with {
+					current: item.current,
+					label: item.name,
+					link: item.link,
+				} only %}
+				{% endfor %}
+			{% endif %}
+		</div>
+	
+		<a href="/" class="relative w-[20%] overflow-hidden transition-all duration-200">
+			<span class="absolute top-0 left-0 opacity-0">Home</span>
+			<img class="w-full mx-auto max-w-40" src="/logo.svg" width="1175" height="760" alt="Go home" />
+		</a>
+	
+		<div class="w-[35%] lg:flex lg:items-center lg:justify-between">
+			{% if primaryMenu %}
+				{% for item in primaryMenu.items|slice(3, primaryMenu.items.length) %}
+				{% include "_views/_components/nav-item.twig" with {
+					current: item.current,
+					label: item.name,
+					link: item.link,
+				} only %}
+				{% endfor %}
+			{% endif %}
+		</div>
+	</nav>
+</header>

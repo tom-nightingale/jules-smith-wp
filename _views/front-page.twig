@@ -1,0 +1,42 @@
+{% extends '_layout/base.twig' %}
+
+{% block hero %}
+	{% include "_views/_components/banner.twig" with {
+		image: post.meta("banner_image").url
+	} %}
+{% endblock %}
+
+{% block content %}
+
+	<div class="container">
+		{% if post.meta("buckets") %}
+			<div class="grid grid-cols-1 gap-8 my-8 sm:grid-cols-2 lg:grid-cols-3">
+
+				{% for bucket in post.meta("buckets") %}
+					{% include "_views/_components/bucket.twig" with {
+						title: bucket.title,
+						link: bucket.link,
+						image: bucket.image.sizes.medium_large,
+						content: bucket.introduction_content,
+						index: loop.index0,
+					}
+					%}
+				{% endfor %}
+			</div>
+		{% endif %}
+	</div>
+	
+	<div class="py-12 bg-gray-100">
+	{% include "_views/_components/bio-intro.twig" with {
+			bgColor: "",
+			containerClasses: "",
+			contentClasses: "",
+			content: bio_intro,
+			image: bio_image.sizes.medium_large,
+			slug: "bio",
+			linkText: "Read my bio",
+		}
+	%}
+	</div>
+
+{% endblock %}

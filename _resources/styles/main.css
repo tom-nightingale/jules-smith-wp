@@ -1,0 +1,50 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+
+@import 'partials/core.css';
+@import 'partials/buttons.css';
+@import 'partials/cookies.css';
+@import 'partials/desktop-nav.css';
+@import 'partials/forms.css';
+@import 'partials/mobile-nav.css';
+@import 'partials/typography.css';
+
+@import "tailwindcss/utilities";
+
+/* Custom CSS Here */
+
+/* Mobile menu */
+.btn-mobile-menu {
+    @apply z-50 flex flex-col items-center justify-around w-6 h-6 transition-transform duration-200 outline-none;
+}
+
+.btn-mobile-menu:focus {
+    @apply outline-none;
+}
+
+.btn-mobile-menu span {
+    @apply relative h-[3px] w-6 bg-black transition-all duration-200;
+    transform-origin: 0;
+}
+
+.btn-mobile-menu.open span:first-child {
+    transform: rotate(45deg);
+    transform-origin: 0;
+}
+
+.btn-mobile-menu.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.btn-mobile-menu.open span:nth-child(3) {
+    transform: rotate(-45deg);
+    transform-origin: 5%;
+}
+
+#mobile-menu {
+    @apply invisible opacity-0 pointer-events-none;
+
+    &.active {
+       @apply visible opacity-100 pointer-events-auto;
+    }
+}
