@@ -29,3 +29,6 @@ Thumbs.db
 *.rar
 *.tar
 *.zip
+
+node_modules/*
+vendor/*
