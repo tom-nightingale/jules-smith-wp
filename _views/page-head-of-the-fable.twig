@@ -6,7 +6,11 @@
 	} %}
 
 	{% include "_views/_components/banner-content.twig" with {
-
+		containerClassNames: "bg-teal-dark",
+		textClassNames: "text-white",
+		intro: post.meta('banner_content'),
+		isFilters: true,
+		options: book_categories,
 	} %}
 {% endblock %}
 
