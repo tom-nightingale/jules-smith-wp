@@ -49,11 +49,6 @@ function register_testimonials() {
 		'publicly_queryable'    => false,
 		'capability_type'       => 'post',
 		'rewrite'               => [ 'with_front' => false ],
-		'show_in_graphql' => true, # Set to false if you want to exclude this type from the GraphQL Schema
-      'graphql_single_name' => 'testimonial', 
-      'graphql_plural_name' => 'testimonials', # If set to the same name as graphql_single_name, the field name will default to `all${graphql_single_name}`, i.e. `allDocument`.
-      'public' => true, # set to false if entries of the post_type should not have public URIs per entry
-      'publicly_queryable' => true,
 	);
 	register_post_type( 'testimonials', $args );
 
@@ -92,6 +87,11 @@ function register_Books() {
 		'items_list_navigation' => __( 'Items list navigation', 'text_domain' ),
 		'filter_items_list'     => __( 'Filter items list', 'text_domain' ),
 	);
+		$rewrite = array(
+		'with_front'            => false,
+		'pages'                 => true,
+		'feeds'                 => true,
+	);
 	$args = array(
 		'label'                 => __( 'Book', 'text_domain' ),
 		'description'           => __( 'Books', 'text_domain' ),
@@ -111,12 +111,7 @@ function register_Books() {
 		'exclude_from_search'   => false,
 		'publicly_queryable'    => false,
 		'capability_type'       => 'post',
-		'rewrite'               => [ 'with_front' => false ],
-		'show_in_graphql' => true, # Set to false if you want to exclude this type from the GraphQL Schema
-          'graphql_single_name' => 'book', 
-          'graphql_plural_name' => 'books', # If set to the same name as graphql_single_name, the field name will default to `all${graphql_single_name}`, i.e. `allDocument`.
-          'public' => true, # set to false if entries of the post_type should not have public URIs per entry
-          'publicly_queryable' => true,
+		'rewrite'               => $rewrite,
 	);
 	register_post_type( 'books', $args );
 
