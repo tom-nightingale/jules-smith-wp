@@ -55,7 +55,7 @@
 	
 		<div class="w-[35%] lg:flex lg:items-center lg:justify-between">
 			{% if primaryMenu %}
-				{% for item in primaryMenu.items|slice(3, primaryMenu.items.length) %}
+				{% for item in primaryMenu.items|slice(3, primaryMenu.items|length) %}
 				{% include "_views/_components/nav-item.twig" with {
 					current: item.current,
 					label: item.name,
