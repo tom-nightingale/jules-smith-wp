@@ -1,12 +1,13 @@
-<?php 
+<?php
 
 $context = Timber::context();
-$timber_post = new Timber\Post();
-$context['post'] = $timber_post;
+$context['posts'] = new Timber\PostQuery();
 
-Timber::render( [ 'single.twig' ], $context );
+$context['category'] = new Timber\Term();
 
-if (is_single()) { ?>
+Timber::render( [ 'category.twig' ], $context );
+
+?>
 <script type="text/javascript">
   const links = document.querySelectorAll('nav .blog');
   if(links.length > 0) {
@@ -15,4 +16,3 @@ if (is_single()) { ?>
     });
   }
 </script>
-<?php }

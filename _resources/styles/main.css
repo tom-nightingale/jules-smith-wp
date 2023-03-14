@@ -58,3 +58,21 @@
 .book-filter.inactive {
     @apply bg-white/10 hover:bg-white/20 text-white
 }
+
+nav a.current {
+    @apply relative text-teal;
+}
+
+nav a.current:before {
+    content: '';
+    @apply absolute h-[6px] w-[6px] rounded-full bg-teal top-1/2 left-0 -translate-y-1/2;
+}
+
+@media (min-width: 1024px) {
+    nav a.current:before {
+        transform: translateX(-50%) translateY(0);
+        top: auto;
+        bottom: 10px;
+        left: 50%;
+    }
+}

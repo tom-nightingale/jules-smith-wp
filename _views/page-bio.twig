@@ -24,11 +24,10 @@
 	{% if post.key_points %}
 	<div class="container">
 		<div
-			class="grid grid-cols-2 py-12 md:grid-cols-4 [&>*:nth-child(4n+4)]:border-r-white md:[&>*:nth-child(4n+4)]:border-r-white">
+			class="grid grid-cols-2 py-12 md:grid-cols-4 [&>*:nth-child(4n+4)]:border-r-white ">
 
 			{% for point in post.meta('key_points') %}
-				<div class="border-r border-gray-100 p-4 text-center md:p-8 {i < 4 &&
-				                'border-b'}">
+				<div class="border-r border-gray-100 p-4 text-center md:p-8 {{loop.index0 < 4 ? 'border-b' : ''}}">
 					<h3 class="text-pink">{{point.title}}</h3>
 					<p>{{point.value}}</p>
 				</div>

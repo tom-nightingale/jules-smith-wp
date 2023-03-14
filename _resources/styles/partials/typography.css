@@ -39,10 +39,15 @@ h4 {
   }
 
   a {
-    @apply inline-block text-primary;
+    @apply relative inline-flex text-red;
 
-    &:hover {
-      @apply underline;
+    &:before {
+      content: '';
+      @apply absolute bottom-0 left-0 h-[1px] w-0 bg-red transition-all duration-200;
+    }
+
+    &:hover:before {
+      @apply w-full;
     }
   }
 
@@ -55,10 +60,19 @@ h4 {
     }
   }
 
-  ul {
+  /* ul {
     li {
       @apply list-disc;
     }
+  } */
+
+  li {
+    @apply relative pl-8 my-4 list-none;
+  }
+
+  li:before {
+    content: '';
+    @apply rounded-full absolute top-[.2rem] left-0 w-5 h-5;
   }
 
   ol {
@@ -72,10 +86,22 @@ h4 {
   }
 }
 
+.copy:not(.make-a-monstory) li:before {
+  @apply bg-[#000] w-6 h-6 bg-[length:50%_50%] bg-center bg-no-repeat;
+}
+
+.make-a-monstory {
+  @apply font-sans lg:text-lg;
+
+  li {
+    @apply before:odd:bg-blue-light before:even:bg-yellow-dark;
+  }
+}
+
 @screen md {
   .copy {
     img {
-      @apply w-auto;
+      @apply w-full;
     }
 
     .alignleft {

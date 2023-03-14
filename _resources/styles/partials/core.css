@@ -24,6 +24,10 @@ body {
 .container {
   @apply w-full px-4 mx-auto;
   max-width: calc(theme("screens.3xl") + theme("spacing.8"));
+
+  &--no-padding {
+    @apply px-0;
+  }
 }
 
 a {

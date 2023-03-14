@@ -1,18 +1,11 @@
 {% extends '_layout/base.twig' %}
 
-
 {% block hero %}
-
-  {% include "_views/_components/banner.twig" with {
-    image: banner_image.url
-  } %}
-
   {% include "_views/_components/banner-content.twig" with {
     containerClassNames: "bg-red",
     textClassNames: "text-white",
-    intro: banner_content,
+    intro: category.name,
     filterTitle: "",
-    options: categories,
   } %}
 {% endblock %}
 
@@ -28,8 +21,7 @@
           title: post.title,
           slug: post.slug,
           postDate: post.date,
-          category: post.terms('category')[0].name,
-          image: post.thumbnail.src,
+          category: category.name,
         } %}
 
       {% endfor %}       

@@ -1,0 +1,44 @@
+<div class="px-2 py-6 mt-6 bg-gray-100 border-t border-gray-200 sm:px-4 lg:border-t-0 lg:border-l-2 lg:px-3">
+    <div class="text-sm lg:px-0">
+        <div class="flex items-center">
+            <div class="relative top-0 w-10 mr-4 overflow-hidden bg-gray-200 rounded-full aspect-square md:block">
+                <img class="absolute top-0 left-0 object-cover object-center w-full h-full lazyload" data-src={{comment.avatar(comment.author.id)}}
+                    alt={{comment.author.name ? comment.author.name : "Author" }} />
+            </div>
+        
+            <div class="flex flex-col w-full text-xs">
+                {% if comment.author.url %}
+                <a href={{comment.author.url}} target="_blank" rel="noreferrer" class="mb-2 font-sans font-bold">{{comment.author.name}}</a>
+                {% else %}
+                <p class="mb-2 font-sans font-bold">{{comment.author.name}}</p>
+                {% endif %}
+                <p>
+                    {{comment.comment_date|date("jS M, Y")}}
+                    <span class="block">{{comment.comment_date|date('H:m')}}</span>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="flex flex-col mt-4">
+        <div class="text-sm prose copy">
+            {{comment.content}}
+        </div>
+    
+        <a href="/" class="mt-4 ml-auto mr-4 font-sans text-xs comment-reply-button hover:text-pink">Reply</a>        
+
+        <div class="hidden comment-reply-form comment-form">
+            {% include '_views/_components/comment-form.twig' with {
+                reply: true,
+            } %}
+        </div>
+
+        <div class="replies">
+            {% for child_comment in comment.children %}
+                {% include '_views/_components/comment-child.twig' with { comment:child_comment } %}
+            {% endfor %}
+        </div>
+    </div>
+
+
+</div>

@@ -47,6 +47,26 @@
                     Paypal button to go here.
                 </div>
             {% endif %}
+
+            {% if postCategory %}  
+                <p
+                    class="p-2 mb-4 text-xs font-bold uppercase text-orange md:absolute md:top-4 md:right-4 md:flex md:aspect-square md:h-32 md:w-32 md:rotate-12 md:flex-wrap md:items-center md:justify-center md:rounded-full md:bg-orange md:p-4 md:text-sm md:text-white">
+                    {{postCategory}}
+                </p>
+            {% endif %}
+
+            {% if postDate %}
+            <p class="mt-8 text-sm">
+                Posted on: {{postDate}}
+            </p>
+            {% endif %}
+            
+            {% if showComments %}
+                <a href="#comments" class="inline-block mt-4 text-sm">
+                    Go to comments
+                    {{ function('icon', 'angle-down', 'w-4 h-4') }}
+                </a>
+            {% endif %}
         </div>
     </div>
 </div>

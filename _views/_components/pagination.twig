@@ -1,0 +1,30 @@
+{% if posts.pagination.pages|length > 0 %}
+
+<nav class="flex flex-wrap items-center justify-center w-full mt-16" role="navigation" aria-label="pagination">
+    <ul class="flex flex-wrap items-center">
+        <li class="mr-4 text-sm text-gray-600">Page:</li>
+        {% for page in posts.pagination.pages %}
+        {% if page.link %}
+        <li>
+            <a href="{{ page.link }}"
+                class="bg-red/50 px-2 py-1 w-8 h-8 text-center mx-1 flex items-center justify-center no-underline font-bold text-white hover:bg-red/80 {{ page.class }}"
+                aria-label="Goto page {{ page.title }}">
+                {{ page.title }}
+            </a>
+        </li>
+        {% else %}
+        {% if page.class == 'dots' %}
+        <li>
+            <span class="">&hellip;</span>
+        </li>
+        {% else %}
+        <span
+            class="is--active bg-red font-bold text-white px-2 py-1 w-8 h-8 text-center mx-1 flex items-center justify-center {{ page.class }}">{{
+            page.title }}</span>
+        {% endif %}
+        {% endif %}
+        {% endfor %}
+    </ul>
+</nav>
+
+{% endif %}

@@ -32,4 +32,30 @@ form {
     }
 }
 
+/* Comment form styling */
+.comment-reply-title {
+  @apply text-center;
+}
+.comment-form {
+  .comment-notes,
+  .logged-in-as {
+    @apply max-w-lg mx-auto mb-8 text-sm text-center;
 
+    a {
+      @apply inline-block text-red hover:underline;
+    }
+  }
+  
+  label {
+    @apply block w-full font-bold uppercase;
+  }
+
+  input, textarea {
+    @apply w-full text-sm;
+  }
+
+  input[type="submit"],
+  .comment-submit {
+    @apply inline-block px-4 py-2 ml-auto font-sans font-bold text-white transition duration-300 border-none cursor-pointer bg-red hover:opacity-100 opacity-80;
+  }
+}

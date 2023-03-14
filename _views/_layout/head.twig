@@ -20,6 +20,12 @@
   {% include "_layout/schema.twig" %}
   
   {{ function('wp_head') }}
+
+  <style>
+    .copy:not(.make-a-monstory) li:before{ 
+      background-image: url("{{theme.link}}/_resources/images/inverted-hat.webp");
+    }
+  </style>
 </head>
 
 <body>

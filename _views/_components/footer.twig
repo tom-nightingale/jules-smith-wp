@@ -1,27 +1,7 @@
 <footer>
 	<ul class="flex justify-center py-12 gap-x-8 text-orange">
 		
-		<li>
-			<a class="{color} transition-all duration-300 hover:opacity-75" href="https://www.instagram.com/headofthefable/?hl=en-gb" target="_blank"
-				rel="noreferrer">
-				<p class="sr-only">Instagram</p>
-				{{ function('icon', 'instagram', 'w-8 h-8') }}
-			</a>
-		</li>
-
-		<li>
-			<a class="{color} transition-all duration-300 hover:opacity-75" href="https://www.facebook.com/headofthefable/" target="_blank" rel="noreferrer">
-				<p class="sr-only">Facebook</p>
-				{{ function('icon', 'facebook', 'w-8 h-8') }}
-			</a>
-		</li>
-
-		<li>
-			<a class="{color} transition-all duration-300 hover:opacity-75" href="https://twitter.com/JulesSmithTweet" target="_blank" rel="noreferrer">
-				<p class="sr-only">Twitter</p>
-				{{ function('icon', 'twitter', 'w-8 h-8') }}
-			</a>
-		</li>
+		{% include "_views/_components/social-links.twig" %}
 		
 	</ul>
 </footer>

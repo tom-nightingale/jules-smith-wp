@@ -1,11 +1,19 @@
-<a class="group relative flex min-h-[400px] flex-col justify-end overflow-hidden bg-white" href={{slug}}>
+<a class="group relative flex min-h-[400px] flex-col justify-end overflow-hidden bg-white" href="{{site.url}}/blog/{{slug}}">
+
+
+    {% if image %}
+        <img class="absolute top-0 left-0 object-cover object-center w-full min-h-full duration-700 lazyload group-hover:scale-105 transiton-all" alt="{{title}}" data-src="{{image}}" />
+    {% else %}
+    <img class="absolute top-0 left-0 object-cover object-center w-full min-h-full duration-700 lazyload group-hover:scale-105 transiton-all"
+        alt="{{title}}" data-src="{{ function('catch_that_image') }}" />
+    {% endif %}
 
     <div class="relative z-10 p-4 font-sans text-center bg-white/90 lg:p-6">
         <p class="text-xs">{{category}} &bull; {{postDate}}</p>
         <p class="my-2 text-lg font-bold uppercase transition-all duration-300">
             {{title}}
         </p>
-        <p class="group-hover:text-red">Read more...</p>
+        <p class="transition-all duration-300 group-hover:text-red">Read more...</p>
     </div>
-
+    
 </a>

@@ -1,10 +1,55 @@
 {% extends '_layout/base.twig' %}
 
 {% block hero %}
+{% include "_views/_components/banner-content.twig" with {
+	containerClassNames: "bg-yellow",
+	textClassNames: "text-black text-4xl uppercase",
+	intro: post.title,
+	showComments: true,
+	postCategory: post.terms('category')[0].name,
+	postDate: post.post_date|date("jS M, Y"),
+} %}
 {% endblock %}
 
 {% block content %}
 
-	single.
+<div class="bg-gray-100">
+
+	<div class="py-8 lg:py-16">
+
+		<div class="container">
+
+			<div class="max-w-2xl mx-auto prose copy">
+
+				{{post.content|apply_filters('the_content')}}
+
+			</div>
+
+		</div>
+
+		{% include "_views/_components/share.twig" %}
+
+		<div id="comments" class="py-8">
+			<div class="container">
+
+				<div class="max-w-screen-lg p-6 mx-auto rounded-lg shadow-lg bg-white/50">
+					<h2 class="mt-4 text-center">
+						{{post.comment_count}} Comments on {{ post.title }}
+					</h2>
+					
+					{% for comment in post.comments %}
+						{% include "_views/_components/comment.twig" %}
+					{% endfor %}
+				</div>
+
+				<div class="max-w-screen-lg mx-auto mt-16 text-sm comment-form">
+					{% include '_views/_components/comment-form.twig' %}
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+</div>
 
 {% endblock %}
