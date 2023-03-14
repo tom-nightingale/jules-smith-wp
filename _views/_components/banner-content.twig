@@ -1,3 +1,5 @@
+
+
 <div class="relative {{containerClassNames}}">
     <div class="container">
         <div class="p-8 mx-auto font-sans text-center sm:p-12 lg:p-20">
@@ -27,9 +29,9 @@
                                 data-category="{{item.slug}}"
                                 class="inline-block px-6 py-2 m-2 text-sm transition duration-200 rounded-full book-filter inactive md:text-base">{{item.name}}</button>
                         {% else %}
-                            {# <a href={item.slug}
+                            <a href="{{site.url}}/blog/category/{{item.slug}}"
                                 class="inline-block px-6 py-2 m-2 text-sm text-white transition duration-200 rounded-full bg-white/10 hover:bg-white/20 md:text-base"
-                                >{{item.name}}</a> #}
+                                >{{item.name}}</a>
                         {% endif %}
                     {% endfor %}
                 </div>

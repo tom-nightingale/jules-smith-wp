@@ -1,0 +1,33 @@
+{% extends '_layout/base.twig' %}
+
+{% block hero %}
+	{% include "_views/_components/banner.twig" with {
+		image: post.meta("banner_image").url
+	} %}
+{% endblock %}
+
+{% block content %}
+
+<div class="py-8 bg-gray-100 border-t-8 border-white lg:py-16">
+	<div class="container">
+
+		<div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
+
+			{% if reviews %}
+				{% for review in reviews %}
+					{% include "_views/_components/review-card.twig" with {
+						name: review.name,
+						position: review.position,
+						content: review.content,
+						background: review.background_colour,
+					} %}
+				{% endfor %}
+			{% endif %}
+			
+		</div>
+
+	</div>
+</div>
+
+	
+{% endblock %}

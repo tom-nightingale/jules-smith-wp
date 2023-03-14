@@ -26,7 +26,7 @@
 
 					{% for item in books %}
 
-						<a data-category="{{item.terms('book-categories')[0].slug}}" class="block book-link group" href="{{site.url}}/books/{{item.slug}}/">
+						<a data-category="{{item.terms('book-categories')[0].slug}}" class="block book-link group" href="{{site.url}}/head-of-the-fable/{{item.slug}}/">
 							<img class="lazyload" data-src="{{item.meta('image').sizes.medium_large}}" alt="{{item.title}}"/>
 							<span class="block mt-4 font-sans text-lg font-bold text-center ">
 								{{item.title}}

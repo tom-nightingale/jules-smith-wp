@@ -1,0 +1,49 @@
+{% extends '_layout/base.twig' %}
+
+{% block hero %}
+	{% include "_views/_components/banner.twig" with {
+		image: post.meta("banner_image").url
+	} %}
+{% endblock %}
+
+{% block content %}
+	
+	<div class="py-12 bg-gray-100">
+		{% include "_views/_components/bio-intro.twig" with {
+		bgColor: "",
+		containerClasses: "",
+		contentClasses: "",
+		content: bio_intro,
+		image: bio_image.sizes.medium_large,
+		slug: "bio",
+		linkText: "Read my bio",
+		}
+		%}
+	</div>
+
+	{% if post.key_points %}
+	<div class="container">
+		<div
+			class="grid grid-cols-2 py-12 md:grid-cols-4 [&>*:nth-child(4n+4)]:border-r-white md:[&>*:nth-child(4n+4)]:border-r-white">
+
+			{% for point in post.meta('key_points') %}
+				<div class="border-r border-gray-100 p-4 text-center md:p-8 {i < 4 &&
+				                'border-b'}">
+					<h3 class="text-pink">{{point.title}}</h3>
+					<p>{{point.value}}</p>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+	{% endif %}
+
+	<div class="container">
+		<div class="max-w-screen-lg py-12 mx-auto">
+			<h1 class="text-pink">{{post.title}}</h1>
+			<div class="copy">
+				{{post.content}}
+			</div>
+		</div>
+	</div>
+
+{% endblock %}

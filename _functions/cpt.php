@@ -1,4 +1,5 @@
 <?php 
+
 function register_testimonials() {
 
 	$labels = array(
@@ -87,7 +88,8 @@ function register_Books() {
 		'items_list_navigation' => __( 'Items list navigation', 'text_domain' ),
 		'filter_items_list'     => __( 'Filter items list', 'text_domain' ),
 	);
-		$rewrite = array(
+	$rewrite = array(
+		'slug'                  => 'head-of-the-fable',
 		'with_front'            => false,
 		'pages'                 => true,
 		'feeds'                 => true,
@@ -98,7 +100,7 @@ function register_Books() {
 		'labels'                => $labels,
 		'supports'              => array( 'title', 'editor' ),
 		'taxonomies'            => array( 'book-categories' ),
-		'hierarchical'          => false,
+		'hierarchical'          => true,
 		'public'                => true,
 		'show_ui'               => true,
 		'show_in_menu'          => true,
@@ -109,8 +111,8 @@ function register_Books() {
 		'can_export'            => true,
 		'has_archive'           => false,
 		'exclude_from_search'   => false,
-		'publicly_queryable'    => false,
-		'capability_type'       => 'post',
+		'publicly_queryable'    => true,
+		'capability_type'       => 'page',
 		'rewrite'               => $rewrite,
 	);
 	register_post_type( 'books', $args );

@@ -1,0 +1,32 @@
+{% extends '_layout/base.twig' %}
+
+{% block hero %}
+	{% include "_views/_components/banner.twig" with {
+		image: post.meta("banner_image").url
+	} %}
+
+	{% include "_views/_components/banner-content.twig" with {
+		containerClassNames: "bg-orange",
+		textClassNames: "text-white",
+		intro: post.meta('banner_content'),
+	} %}
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+	<div class="mx-auto my-16 mb-12 prose text-center max-w-screen-2xs">
+		{{post.content}}
+	</div>
+
+	<form action="https://formspree.io/f/mgebynng" method="POST">
+		<input type="text" name="name" placeholder="Name *" required />
+		<input type="text" name="_gotcha" class="hidden" />
+		<input type="email" name="email" placeholder="Email *" required />
+		<textarea rows="8" name="message" placeholder="Your message *" required></textarea>
+		<input class="text-white bg-orange" type="submit" value="Send message" />
+	</form>
+
+</div>
+
+{% endblock %}

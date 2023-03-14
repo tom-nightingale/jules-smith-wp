@@ -4,8 +4,13 @@ $context = Timber::context();
 $timber_post = new Timber\Post();
 $context['post'] = $timber_post;
 
-// 2065 is the bio page.
-$context['bio_image'] = get_field('image', 2065);
-$context['bio_intro'] = get_field('intro', 2065);
+$args = [
+    'post_type' => 'testimonials',
+    'posts_per_page' => -1,
+    'orderby' => 'menu_order',
+    'order' => 'ASC'
+];
+
+$context['reviews'] = new Timber\PostQuery($args);
 
 Timber::render( [ 'page-'.$timber_post->slug.'.twig', 'page.twig' ], $context );
