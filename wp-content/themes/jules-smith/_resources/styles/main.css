@@ -76,3 +76,8 @@ nav a.current:before {
         left: 50%;
     }
 }
+
+iframe,
+.entry-content-asset {
+    @apply w-full;
+}

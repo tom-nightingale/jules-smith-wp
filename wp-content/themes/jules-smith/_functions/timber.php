@@ -39,7 +39,7 @@
     {
       // Menus
       $context['site'] = $this;
-      $context['options'] = get_fields('option');
+      $context['marketing'] = get_fields('option');
       $context['primaryMenu'] = new Timber\Menu('Primary Menu');
       $context["commentReplyArgs"] = array('reply_text' => "Reply", 'depth' => 1, 'max_depth' => 5);
       // Check if the secondary nav menu location has a menu assigned to it
