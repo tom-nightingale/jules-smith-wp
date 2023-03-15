@@ -1,0 +1,70 @@
+{
+  "name": "post-to-google-my-business",
+  "version": "1.0.0",
+  "description": "=== Post to Google My Business ===\r Contributors: koen12344, tycoon12344, freemius\r Donate link: https://tycoonmedia.net/?utm_source=repository&utm_medium=link&utm_campaign=donate\r Tags: google my business, google, business, posts, post, local search, google my business posts, google places, google plus, google+\r Requires at least: 4.6\r Tested up to: 5.2.2\r Stable tag: 2.1.10\r Requires PHP: 5.3.0\r License: GPLv2 or later\r License URI: https://www.gnu.org/licenses/gpl-2.0.html",
+  "main": "Gruntfile.js",
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ],
+    "plugins": [
+      "@wordpress/babel-plugin-import-jsx-pragma",
+      "@babel/plugin-transform-react-jsx"
+    ]
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "watch": "webpack --mode=development --watch --config webpack.config.js",
+    "watch-premium": "webpack --mode=development --watch --config webpack-premium.config.js",
+    "build": "webpack --mode=production --config webpack.config.js",
+    "build-premium": "webpack --mode=production --config webpack-premium.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://koen12344@bitbucket.org/koen12344/post-to-google-my-business.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/koen12344/post-to-google-my-business#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.15.4",
+    "@babel/core": "^7.15.5",
+    "@babel/plugin-transform-react-jsx": "^7.14.9",
+    "@babel/preset-env": "^7.15.4",
+    "@wordpress/babel-preset-default": "^4.20.0",
+    "@wordpress/dependency-extraction-webpack-plugin": "^2.9.0",
+    "@wordpress/edit-post": "^3.27.3",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.2.2",
+    "babel-preset-env": "^1.7.0",
+    "css-loader": "^3.6.0",
+    "grunt": "^1.4.1",
+    "grunt-wp-i18n": "^1.0.3",
+    "grunt-wp-readme-to-markdown": "^2.0.1",
+    "style-loader": "^1.3.0",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "webpack": "^4.46.0",
+    "webpack-cli": "^3.3.12"
+  },
+  "dependencies": {
+    "@fullcalendar/core": "^5.9.0",
+    "@fullcalendar/daygrid": "^5.9.0",
+    "@fullcalendar/timegrid": "^5.9.0",
+    "@wordpress/babel-plugin-import-jsx-pragma": "^2.7.0",
+    "@wordpress/components": "^9.9.0",
+    "@wordpress/data": "^4.27.3",
+    "@wordpress/editor": "^9.26.3",
+    "@wordpress/element": "^2.20.3",
+    "@wordpress/hooks": "^3.2.0",
+    "@wordpress/i18n": "^3.20.0",
+    "@wordpress/icons": "^1.4.0",
+    "@wordpress/plugins": "^2.25.3",
+    "jquery": "^3.6.0",
+    "jquery-ui": "^1.12.1",
+    "jquery-ui-bundle": "^1.12.1-migrate",
+    "jquery-ui-timepicker-addon": "^1.6.3"
+  }
+}
