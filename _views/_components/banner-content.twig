@@ -44,7 +44,8 @@
                             class="inline-block font-sans text-2xl font-bold -rotate-12 text-blue">£{{post.price}}</span>
                         via Paypal
                     </p>
-                    Paypal button to go here.
+
+                    {% include "_views/_components/paypal-button.twig" %}
                 </div>
             {% endif %}
 
