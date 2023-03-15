@@ -1,17 +1,3 @@
-{# <li>
-    <div>{{ comment.content }}</div>
-    <p class="comment-author">{{ comment.author.name }}</p>
-    {{ function('comment_form') }}
-    <!-- nested comments here -->
-    {% if comment.children %}
-    <div class="replies">
-        {% for child_comment in comment.children %}
-            {% include '_views/_components/comment.twig' with { comment:child_comment } %}
-        {% endfor %}
-    </div>
-    {% endif %}
-</li> #}
-
 <div class="grid grid-cols-12 py-8 border-b border-gray-200 rounded-lg last:border-none">
     <div class="col-span-12 mb-4 md:col-span-2 md:flex md:flex-col md:items-center md:px-0">
         <div class="flex items-center md:flex-col">
@@ -25,8 +11,6 @@
                 {% else %}
                 <p class="mb-2 font-sans font-bold">{{comment.author.name}}</p>
                 {% endif %}
-
-                
         
                 <p>
                     {{comment.comment_date|date("jS M, Y")}}
@@ -43,7 +27,7 @@
     
         <a href="/" class="mt-4 ml-auto mr-4 font-sans text-xs comment-reply-button hover:text-pink">Reply</a>
 
-        <div class="hidden comment-reply-form comment-form">
+        <div class="hidden py-8 mt-8 border-t comment-reply-form comment-form">
             {% include '_views/_components/comment-form.twig' with {
             reply: true,
             } %}

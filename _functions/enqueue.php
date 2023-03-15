@@ -11,6 +11,10 @@
           wp_enqueue_script('comment-replies', get_theme_file_uri() . '/dist/production-comment-reply-form.js','', '', true);
         }
 
+        if(is_page(array('testimonials', 'make-a-monstory'))){
+          wp_enqueue_script('review-cards', get_theme_file_uri() . '/dist/production-review-cards.js','', '', true);
+        }
+
         // Localize the themeURL to our production file so we can use it to complete file paths
         wp_localize_script('production', 'themeURL', array(
           'themeURL' => get_stylesheet_directory_uri()

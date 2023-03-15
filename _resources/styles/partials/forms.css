@@ -55,7 +55,7 @@ form {
   }
 
   input[type="submit"],
-  .comment-submit {
-    @apply inline-block px-4 py-2 ml-auto font-sans font-bold text-white transition duration-300 border-none cursor-pointer bg-red hover:opacity-100 opacity-80;
+  button.comment-submit {
+    @apply inline-block px-4 py-2 ml-auto font-sans font-bold text-white transition duration-300 border-none rounded-md cursor-pointer bg-red hover:opacity-100 opacity-80;
   }
 }

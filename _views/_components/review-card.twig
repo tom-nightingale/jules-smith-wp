@@ -1,4 +1,4 @@
-<button class="flex aspect-video flex-col items-center justify-center sm:aspect-square bg-reviews-{{background}} p-8 text-center text-white transition-all duration-200 hover:opacity-90">
+<button class="review-card-button flex aspect-video flex-col items-center justify-center sm:aspect-square bg-reviews-{{background}} p-8 text-center text-white transition-all duration-200 hover:opacity-90">
     {% if name %}
         <h2 class="text-2xl">{{name}}</h2>
     {% endif %}
@@ -7,3 +7,24 @@
     <p class="mt-8">{{position}}</p>
     {% endif %}
 </button>
+
+<div class="fixed top-0 left-0 flex items-center justify-center invisible w-full min-h-screen p-4 transition-all duration-300 opacity-0 pointer-events-none review-container bg-black/60">
+    <div class="relative max-h-[75vh] max-w-screen-md overflow-scroll bg-white p-4 pt-8 text-xs md:text-sm">
+        <a href="/" class="close-modal absolute top-4 right-4 flex aspect-square items-center justify-center rounded-full bg-reviews-{{background}} p-1 text-white">
+            {{ function('icon', 'times', 'w-6 h-6') }}
+        </a>
+
+        <h2 class="mb-0 text-reviews-{background}">{{name}}</h2>
+
+        {% if website %}
+            <a href={{website}} target="_blank" rel="noreferrer" class="inline-block mb-4">{{website}}</a>
+        {% endif %}
+        {% if position %}
+            <p class="mb-4 font-sans">{{position}}</p>
+        {% endif %}
+        <hr class="mx-0 h-1 w-[20%] border-none bg-reviews-{{background}}" />
+        <div class="mt-4 prose copy">
+            {{content|apply_filters('the_content')}}
+        </div>
+    </div>
+</div>

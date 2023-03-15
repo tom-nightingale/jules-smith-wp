@@ -40,11 +40,13 @@
 					{% for comment in post.comments %}
 						{% include "_views/_components/comment.twig" %}
 					{% endfor %}
+
+					<div class="max-w-screen-lg mx-auto my-16 text-sm comment-form">
+						{% include '_views/_components/comment-form.twig' %}
+					</div>
 				</div>
 
-				<div class="max-w-screen-lg mx-auto mt-16 text-sm comment-form">
-					{% include '_views/_components/comment-form.twig' %}
-				</div>
+				
 			</div>
 		</div>
 
