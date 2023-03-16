@@ -47,7 +47,7 @@ form {
   }
   
   label {
-    @apply block w-full font-bold uppercase;
+    @apply block font-bold uppercase;
   }
 
   input, textarea {
