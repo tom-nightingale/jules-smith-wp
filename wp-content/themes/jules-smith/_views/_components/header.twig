@@ -1,7 +1,7 @@
 <header class="py-6 bg-white lg:py-4">
 	<div class="container">
 		<div class="flex flex-wrap items-center justify-between lg:hidden">
-			<a class="w-1/2 transition-all duration-500 max-w-32" href="/">
+			<a class="w-1/2 transition-all duration-500 max-w-32" href="{{site.url}}">
 				<img class="" src="{{theme.link}}/_resources/images/logo.svg" alt="Go home" width="1175" height="760" />
 			</a>
 		
@@ -18,7 +18,7 @@
 
 	{# mobile menu #}
 	<nav id="mobile-menu" aria-label="Mobile Menu" class="fixed top-0 left-0 z-40 flex flex-col items-center justify-center w-full min-h-screen transition-all duration-500 bg-white lg:invisible lg:hidden lg:opacity-0">
-		<a class="block w-1/2 mb-8 transition-all duration-500 max-w-40" href="/">
+		<a class="block w-1/2 mb-8 transition-all duration-500 max-w-40" href="{{site.url}}">
 			<img class="lazyload" data-src="{{theme.link}}/_resources/images/logo.svg" alt="Go home" width="1175" height="760" />
 		</a>
 
@@ -50,7 +50,7 @@
 			{% endif %}
 		</div>
 	
-		<a href="/" class="relative w-[20%] overflow-hidden transition-all duration-200">
+		<a href="{{site.url}}" class="relative w-[20%] overflow-hidden transition-all duration-200">
 			<span class="absolute top-0 left-0 opacity-0">Home</span>
 			<img class="w-full mx-auto max-w-40" src="{{theme.link}}/_resources/images/logo.svg" width="1175" height="760" alt="Go home" />
 		</a>
