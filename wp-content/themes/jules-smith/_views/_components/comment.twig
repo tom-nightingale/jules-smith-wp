@@ -2,7 +2,7 @@
     <div class="col-span-12 mb-4 md:col-span-2 md:flex md:flex-col md:items-center md:px-0">
         <div class="flex items-center md:flex-col">
             <div class="relative w-10 h-10 overflow-hidden bg-gray-200 rounded-full md:block md:h-20 md:w-20">
-                <img class="absolute top-0 left-0 object-cover object-center w-full h-full lazyload" alt="{{comment.author.name ? comment.author.name : "Author" }}" data-src="{{comment.author.avatar.abs_url}}" />
+                <img class="absolute top-0 left-0 object-cover object-center w-full h-full lazyload" alt="{{comment.author.name ? comment.author.name : "Author" }}" data-src="{{comment.avatar(commen.author.id)}}" />
             </div>
         
             <div class="flex flex-col justify-between w-full ml-4 text-xs md:mt-4 md:text-center">
