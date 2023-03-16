@@ -56,7 +56,7 @@ form {
 
   input[type="submit"],
   button.comment-submit {
-    @apply inline-block px-4 py-2 ml-auto font-sans font-bold text-white transition duration-300 border-none rounded-md cursor-pointer bg-red hover:opacity-100 opacity-80;
+    @apply inline-block px-4 py-2 ml-auto font-sans font-bold text-white transition duration-300 border-none cursor-pointer bg-red hover:opacity-100 opacity-80;
   }
 }
 
@@ -72,7 +72,7 @@ form {
   }
 
   input[type="submit"]{
-    @apply inline-block px-4 py-2 ml-auto font-sans font-bold text-white transition duration-300 border-none rounded-md opacity-100 cursor-pointer bg-pink hover:opacity-80;
+    @apply inline-block px-4 py-2 ml-auto font-sans font-bold text-white transition duration-300 border-none opacity-100 cursor-pointer bg-pink hover:opacity-80;
   }
 
   .es_spinner_image {

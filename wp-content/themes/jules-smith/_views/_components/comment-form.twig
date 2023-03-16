@@ -19,6 +19,6 @@
             <textarea required placeholder="Leave a comment... *" name="comment" cols="60" rows="8"></textarea>
         <input name="comment_post_ID" value="{{ post.id }}" type="hidden">
         <input name="comment_parent" value="{{ comment.ID|default('0') }}" type="hidden">
-        <input type="submit" name="Submit" class="inline-block px-4 py-2 ml-auto font-sans font-bold text-white transition duration-300 border-none rounded-md cursor-pointer bg-red hover:opacity-100 opacity-80" />
+        <input type="submit" name="Submit" class="inline-block px-4 py-2 ml-auto font-sans font-bold text-white transition duration-300 border-none cursor-pointer bg-red hover:opacity-100 opacity-80" />
     </form>
 </div>
