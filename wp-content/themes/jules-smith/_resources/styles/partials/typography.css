@@ -53,18 +53,12 @@ h4 {
 
   ol,
   ul {
-    @apply pl-4 mb-8;
+    @apply mb-8;
 
     li {
-      @apply mb-2 leading-relaxed;
+      @apply my-4 leading-relaxed;
     }
   }
-
-  /* ul {
-    li {
-      @apply list-disc;
-    }
-  } */
 
   li {
     @apply relative pl-8 my-4 list-none;
@@ -72,7 +66,7 @@ h4 {
 
   li:before {
     content: '';
-    @apply rounded-full absolute top-[.2rem] left-0 w-5 h-5;
+    @apply absolute top-0 left-0 w-5 h-5 rounded-full;
   }
 
   ol {
@@ -95,6 +89,10 @@ h4 {
 
   li {
     @apply before:odd:bg-blue-light before:even:bg-yellow-dark;
+  }
+
+  li:before {
+    @apply top-[.25rem];
   }
 }
 
