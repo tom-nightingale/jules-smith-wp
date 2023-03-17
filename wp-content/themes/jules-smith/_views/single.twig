@@ -39,7 +39,7 @@
 
 				<div class="max-w-screen-lg p-6 mx-auto rounded-lg shadow-lg bg-white/50">
 					<h2 class="mt-4 text-center">
-						{{post.comment_count}} Comments on {{ post.title }}
+						{{post.comment_count}} Comment{{post.comment_count > 1 ? 's' : ''}} on {{ post.title }}
 					</h2>
 					
 					{% for comment in post.comments %}

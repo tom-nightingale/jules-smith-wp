@@ -17,6 +17,8 @@
 						title: bucket.title,
 						link: bucket.link,
 						image: bucket.image.sizes.medium_large,
+						imageWidth: bucket.image.sizes["medium_large-width"],
+						imageHeight: bucket.image.sizes["medium_large-height"],
 						content: bucket.introduction_content,
 						index: loop.index0,
 					}
@@ -33,6 +35,8 @@
 			contentClasses: "",
 			content: bio_intro,
 			image: bio_image.sizes.medium_large,
+			imageWidth: bio_image.sizes["medium_large-width"],
+			imageHeight: bio_image.sizes["medium_large-height"],
 			slug: "bio",
 			linkText: "Read my bio",
 		}

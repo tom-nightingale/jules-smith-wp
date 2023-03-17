@@ -4,7 +4,7 @@
     
     <a href="{{link}}" class="flex flex-col h-full overflow-hidden shadow-lg group {{bucketBgColors[index]}}">
         <div class="relative overflow-hidden aspect-video">
-            <img class="absolute inset-0 z-0 object-cover object-center w-full h-full transition-all duration-700 opacity-75 lazyload group-hover:scale-105" data-src="{{image}}" alt="{{title}}">
+            <img width="{{imageWidth}}" height="{{imageHeight}}" class="absolute inset-0 z-0 object-cover object-center w-full h-full transition-all duration-700 opacity-75 lazyload group-hover:scale-105" data-src="{{image}}" alt="{{title}}">
         </div>
 
         <div class="{{bucketBgColors[index]}} flex flex-col p-12 pb-0 text-white">
